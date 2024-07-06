@@ -1,5 +1,5 @@
 {% set name = "testgres" %}
-{% set version = "1.10.0" %}
+{% set version = "1.10.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/postgrespro/testgres/archive/refs/tags/{{ version }}.tar.gz
-  sha256: a30673f39d71581e54ce6639a92128085d04795b860112466df66b5e23f8b983
+  sha256: 664ee905f384b0d9819ae73c5ba258f6fe0300c5a212a5faf43552fab84ef796
 
 
 build:
   number: 0
-  noarch: python 
+  noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
@@ -32,7 +32,7 @@ test:
   requires:
     - pip
   commands:
-    - pip check 
+    - pip check
   imports:
     - testgres
     - testgres.operations
